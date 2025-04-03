@@ -8,7 +8,10 @@ export async function onRequest(context) {
 
   const openaiBody = {
     model: "gpt-4o-mini",
-    messages: [{ role: "user", content: prompt }],
+    messages: [
+      { role: "system", content: context.env.OPENAI_API_SYSTEM_PROMPT },
+      { role: "user", content: prompt },
+    ],
     max_tokens: 100,
   };
 
