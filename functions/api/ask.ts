@@ -1,3 +1,6 @@
 export function onRequestGet(context) {
-  return "Harry doesn't like your question.";
+  const { request } = context;
+  const { prompt } = request.json();
+
+  return "Harry doesn't like your question: " + prompt;
 }
