@@ -1,6 +1,6 @@
-export function onRequestGet(context) {
+export function onRequestPost(context) {
   const { request } = context;
-  const { prompt } = request.json();
+  const { prompt } = JSON.parse(request.body);
 
   return "Harry doesn't like your question: " + prompt;
 }
