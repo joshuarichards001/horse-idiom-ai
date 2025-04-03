@@ -5,6 +5,11 @@ function App() {
   const [response, setResponse] = useState("");
 
   const fetchResponse = async () => {
+    if (!prompt) {
+      setResponse("Please enter a prompt.");
+      return;
+    }
+
     const res = await fetch("/api/ask", {
       method: "POST",
       headers: {
