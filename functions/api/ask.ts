@@ -4,7 +4,5 @@ export async function onRequest(context) {
 
   const prompt = body.prompt;
 
-  return new Response(JSON.stringify({ response: prompt }), {
-    headers: { "Content-Type": "application/json" },
-  });
+  return new Response(JSON.stringify({ response: prompt }));
 }
